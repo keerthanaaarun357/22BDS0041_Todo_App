@@ -1,88 +1,94 @@
 .ancestorContainer {
     display: flex;
-    background-color: whitesmoke;
-    padding: 8px;
-    border-radius: 8px;
-    height: 80vh;
-    margin: 6px;
     flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to right, #ffecd2 0%, #d25fff 100%);
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .headerContainer {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: fit-content;
-    padding: 4px;
-}
-
-.addButton {
-    height: fit-content;
-    width: fit-content;
-    padding: 12px 8px;
-    background-color: floralwhite;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: large;
-    font-weight: 700;
-    transition: all 0.3s linear;
-    box-shadow: 1px 1px 4px 2px rgb(0, 0, 0, 0.1);
-
-    &:hover {
-        box-shadow: 1px 1px 4px 2px rgb(0, 0, 0, 0.4);
-    }
-}
-
-.todoContainer {
-    display: flex;
     flex-direction: column;
-    height: 80%;
-    background-color: rgb(0, 0, 0);
-    margin: 4px;
-    border-radius: 8px;
-    padding: 8px;
-    gap: 12px;
-    border-radius: 8px;
-    overflow-y: auto;
-}
-
-
-.todo {
-    background-color: white;
-
-    padding: 8px;
-    display: flex;
     align-items: center;
-    box-shadow: 1px 1px 4px 2px rgb(0, 0, 0, 0.1);
-    justify-content: space-between;
-    max-height: 2em;
-
-    input {
-        margin-right: 8px;
-        height: 20px;
-        width: 20px;
-    }
+    margin-bottom: 20px;
 }
 
-.infoContainer {
-    width: 90%;
-    font-size: x-large;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+.headerContainer h1 {
+    font-family: 'Pacifico', cursive;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .todoInput {
-    width: 500px;
-    margin-right: 8px;
-    height: 45px;
-    font-size: large;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 250px;
+    font-size: 16px;
+}
+
+.addButton {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #4c57af;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.addButton:hover {
+    background-color: #4b45a0;
+}
+
+.todoContainer {
+    width: 100%;
+    max-width: 600px;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.editInput {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
 }
 
 .noTodoMessage {
-    color: white;
-    align-self: center;
-    justify-self: center;
-    font-size: large;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
