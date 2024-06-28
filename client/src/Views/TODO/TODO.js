@@ -38,6 +38,11 @@ export function TODO(props) {
     };
 
     const addTodo = () => {
+        if (!newTodo.title || !newTodo.description) {
+            alert('Please enter both title and description');
+            return;
+        }
+        
         const options = {
             method: 'POST',
             url: 'http://localhost:8000/api/todo',
@@ -201,7 +206,7 @@ export function TODO(props) {
                                 )}
                             </span>
                             <span
-                                style={{ cursor: 'pointer' }}
+                                style={{ cursor: 'pointer', color: 'red', marginLeft: '10px' }}
                                 onClick={() => {
                                     deleteTodo(entry._id);
                                 }}
@@ -209,7 +214,7 @@ export function TODO(props) {
                                 Delete
                             </span>
                             <span
-                                style={{ cursor: 'pointer' }}
+                                style={{ cursor: 'pointer', color: 'blue', marginLeft: '10px' }}
                                 onClick={() => {
                                     setEditingId(entry._id);
                                     setEditingValue({ title: entry.title, description: entry.description });
